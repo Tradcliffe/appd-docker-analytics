@@ -1,0 +1,31 @@
+version: '3'
+services:
+#  analytics-service:
+#    networks: 
+#      analytics-network: 
+#        aliases:
+#            - analytics-service
+            
+  tomcat:
+    image: appd-java:latest
+    hostname: appd-tomcat
+    container_name: appd-tomcat
+    ports: 
+      - "8080:8080"
+    env_file: ./appd-docker-analytics/tomcat/docker.env
+
+  monitor:
+    image: appd-svm:latest
+    hostname: monitor
+    container_name: monitor
+    volumes:
+      - /:/hostroot:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports: 
+      - "9090:9090"
+    env_file: ./appd-docker-analytics/svm/docker.env
+
+#networks:
+#  default:
+#    external:
+#      name: appdynamics_default
