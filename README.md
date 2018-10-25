@@ -27,3 +27,5 @@ setenv.sh Enables Node Prefix use, configures analytics url and set Unique_HostI
 
 Update: docker-compose-volume.yml
 This example includes a shared volume to share tomcat logs for log analytics.
+
+Usage: docker-compose -f docker-compose-volume.yml up -d
