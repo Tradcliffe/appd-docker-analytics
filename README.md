@@ -24,3 +24,6 @@ Java agent:
 setenv.sh Enables Node Prefix use, configures analytics url and set Unique_HostID to the first 12 characters of the container ID.  Everything else is set via Environment Variables.
 
 *Note that the analytics url references 'monitor' this is the hostname mapping setup in the docker-compose.yml
+
+Update: docker-compose-volume.yml
+This example includes a shared volume to share tomcat logs for log analytics.
